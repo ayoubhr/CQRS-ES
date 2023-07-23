@@ -21,10 +21,10 @@ public class AccountEventStore implements EventStore {
     private EventStoreRepository eventStoreRepository;
 
     @Override
-    public void saveEvent(String aggregateId, Iterable<BaseEvent> events, int expectedVersion) {
+    public void saveEvents(String aggregateId, Iterable<BaseEvent> events, int expectedVersion) {
         var eventStream = eventStoreRepository.findByAggregateIdentifier(aggregateId);
 
-        // optimistic concurrency model/persist
+        // optimistic concurrency control
         if (expectedVersion != -1 && eventStream.get(eventStream.size() - 1).getVersion() != expectedVersion) {
             throw new ConcurrencyException();
         }
