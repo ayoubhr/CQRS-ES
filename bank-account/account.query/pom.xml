@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.techbank</groupId>
 	<artifactId>account.query</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>account.query</name>
-	<description>Bank account query API</description>
+	<description>Bank Account Query API</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
