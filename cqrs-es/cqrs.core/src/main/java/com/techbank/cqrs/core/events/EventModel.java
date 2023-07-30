@@ -1,6 +1,7 @@
 package com.techbank.cqrs.core.events;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -9,6 +10,7 @@ import java.util.Date;
 
 @Data
 @SuperBuilder
+@NoArgsConstructor
 @Document(collection = "eventStore")
 public class EventModel {
     @Id
